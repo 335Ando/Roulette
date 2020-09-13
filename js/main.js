@@ -51,12 +51,35 @@
         stop.classList.add('inactive');
     });
 
-    //ここ悩んでます。ヘルプミー！
+    
     reset.addEventListener('click', () => {
-        
+        let text = document.querySelector('input');
+        let lilist = document.querySelector('.panel ul');
+        lottery.textContent = "";
+        while (names.length > 0) {
+            lilist.removeChild(lilist.lastChild);
+            names.pop();
+        }
+        console.log(names);
+        text.focus();
     });
 
-    //入力した名前の削除
-    
+    //入力した名前の削除ヘルプミー！(直近しか消せないから選択して消せるようにしたい)
+    document.getElementById('rm').addEventListener('click', () => {
+        let text = document.querySelector('input');
+        let lilist = document.querySelector('.panel ul');
+        if (names.length > 0) {
+            lilist.removeChild(lilist.lastChild);
+            names.pop();
+        }
+        console.log(names);
+        text.focus();
+    });
+
+    const selectName = document.querySelector('.panel ul li');
+
+    selectName.addEventListener('click', () => {
+        selectName.classList.add('nameSelector');
+    });
 }
 

@@ -23,19 +23,19 @@ form {
 input[type="text"] {
     width: 200px;
 }
-#btn {
-    display: inline-block;
-    width: 50px;
-    padding: 1px;
+#rm {
+    width: 100px;
+    padding: 3px;
     border-radius: 4px;
     background: #52131E;
     text-align: center;
     color: #fff;
     box-shadow: 0 4px 0 #461019;
     cursor: pointer;
-    user-select: none
+    user-select: none;
+    margin: 0 auto;
 }
-#btn:hover {
+#rm:hover {
     opacity: 0.9;
 }
 
@@ -86,4 +86,9 @@ user-select: none;
  
 .inactive {
     opacity: 0.5;
+}
+
+.nameSelector {
+    background: #C0B79F;
+    cursor: pointer;
 }
