@@ -31,13 +31,20 @@ function spin() {
   }, 50);
 }
 
+//パネルに値がなければスタートを押せない
+if (!names.length) {
+  start.classList.add("inactive");
+} else if (names.length) {
+  start.classList.remove("inactive");
+}
+
 start.addEventListener("click", () => {
   if (start.classList.contains("inactive")) {
     return;
   }
   spin();
-  start.classList.add("inactive");
   stop.classList.remove("inactive");
+  start.classList.add("inactive");
 });
 
 stop.classList.add("inactive");
@@ -75,8 +82,8 @@ document.getElementById("rm").addEventListener("click", () => {
   text.focus();
 });
 
-const selectName = document.querySelector(".panel ul li");
+// const selectName = document.querySelector(".panel ul li");
 
-selectName.addEventListener("click", () => {
-  selectName.classList.add("nameSelector");
-});
+// selectName.addEventListener("click", () => {
+//   selectName.classList.add("nameSelector");
+// });
