@@ -13,6 +13,7 @@ document.getElementById("input").addEventListener("click", () => {
     console.log(names);
     text.value = "";
     text.focus();
+    start.classList.remove("inactive");
   }
 });
 
@@ -30,14 +31,7 @@ function spin() {
     spin();
   }, 50);
 }
-
-//パネルに値がなければスタートを押せない
-if (!names.length) {
-  start.classList.add("inactive");
-} else if (names.length) {
-  start.classList.remove("inactive");
-}
-
+start.classList.add("inactive");
 start.addEventListener("click", () => {
   if (start.classList.contains("inactive")) {
     return;
@@ -68,6 +62,7 @@ reset.addEventListener("click", () => {
   }
   console.log(names);
   text.focus();
+  start.classList.add("inactive");
 });
 
 //入力した名前の削除ヘルプミー！(直近しか消せないから選択して消せるようにしたい)
@@ -80,10 +75,7 @@ document.getElementById("rm").addEventListener("click", () => {
   }
   console.log(names);
   text.focus();
+  if (names.length < 1) {
+    start.classList.add("inactive");
+  }
 });
-
-// const selectName = document.querySelector(".panel ul li");
-
-// selectName.addEventListener("click", () => {
-//   selectName.classList.add("nameSelector");
-// });
